@@ -1,6 +1,6 @@
-# MEGA League NFL Stats Analysis
+# MadZone League NFL Stats Analysis
 
-Comprehensive NFL statistics analysis and visualization system for the MEGA League, featuring playoff probability calculations, strength of schedule analysis, draft pick race tracking, and interactive HTML reports.
+Comprehensive NFL statistics analysis and visualization system for the MadZone League, featuring playoff probability calculations, strength of schedule analysis, draft pick race tracking, and interactive HTML reports.
 
 ## 📁 Project Structure
 
@@ -353,7 +353,7 @@ SOS_WEIGHT = 0.3
 
 ### Changing League Name Prefix
 
-If your league name is not "MEGA", update CSV file paths in all scripts:
+If your league name is not "MadZone", update CSV file paths in all scripts:
 
 ```python
 # Change from:
