@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadZone Playoff Race - Week 14</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+               background: transparent; 
+               padding: 0; margin: 0; color: #333; overflow-x: hidden; }
+        .container { max-width: 100%; margin: 0 auto; background: white; 
+                     border-radius: 20px; padding: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        h1 { text-align: center; color: #1e293b; margin-bottom: 10px; font-size: 2.5em; }
+        .subtitle { text-align: center; color: #64748b; margin-bottom: 30px; font-size: 1.1em; }
+        .conferences { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+        .conference { background: #f8fafc; border-radius: 15px; padding: 25px; }
+        .conference h2 { color: #0f172a; margin-bottom: 20px; padding-bottom: 10px; 
+                         border-bottom: 3px solid #3b82f6; }
+        .playoff-team { background: white; border-radius: 10px; padding: 15px; margin-bottom: 12px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .playoff-team:hover { transform: translateX(5px); }
+        .seed-1 { border-left: 5px solid #3b82f6; }
+        .seed-2 { border-left: 5px solid #60a5fa; }
+        .seed-3 { border-left: 5px solid #93c5fd; }
+        .seed-4 { border-left: 5px solid #bfdbfe; }
+        .seed-wc { border-left: 5px solid #22c55e; }
+        .seed-bubble { border-left: 5px solid #eab308; }
+        .seed-out { border-left: 5px solid #ef4444; opacity: 0.7; }
+        .pick-top3 { border-left: 5px solid #dc2626; }
+        .pick-top10 { border-left: 5px solid #f59e0b; }
+        .pick-rest { border-left: 5px solid #84cc16; }
+        .team-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .team-name { font-size: 1.2em; font-weight: bold; color: #1e293b; }
+        .team-record { font-size: 1.1em; color: #475569; font-weight: 600; }
+        .team-details { display: flex; gap: 15px; font-size: 0.9em; color: #64748b; }
+        .sos-badge { background: #dbeafe; color: #1e40af; padding: 4px 12px; 
+                     border-radius: 20px; font-weight: 600; position: relative; cursor: help; }
+        .sos-easy { background: #d1fae5; color: #065f46; }
+        .sos-hard { background: #fee2e2; color: #991b1b; }
+        
+        .sos-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 8px;
+            background: #1a1a1a;
+            color: white;
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            white-space: nowrap;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            pointer-events: none;
+        }
+        
+        .sos-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #1a1a1a;
+        }
+        
+        .sos-badge:hover .sos-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .tooltip-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 6px;
+        }
+        
+        .opponent-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 4px 0;
+            font-size: 0.95em;
+        }
+        
+        .opponent-name {
+            font-weight: 500;
+            flex: 1;
+        }
+        
+        .opponent-details {
+            font-size: 0.9em;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .rank-elite { color: #dc2626; }
+        .rank-mid { color: #eab308; }
+        .rank-weak { color: #16a34a; }
+        .seed-badge { display: inline-block; padding: 4px 12px; border-radius: 6px; 
+                      font-weight: bold; font-size: 0.85em; margin-right: 10px; }
+        .badge-div { background: #3b82f6; color: white; }
+        .badge-wc { background: #22c55e; color: white; }
+        .badge-bubble { background: #eab308; color: white; }
+        .badge-out { background: #ef4444; color: white; }
+        .badge-pick-top3 { background: #dc2626; color: white; }
+        .badge-pick-top10 { background: #f59e0b; color: white; }
+        .badge-pick-rest { background: #84cc16; color: white; }
+        .divisions { margin-top: 30px; }
+        .division { background: white; border-radius: 10px; padding: 20px; margin-bottom: 15px; }
+        .division h3 { color: #0f172a; margin-bottom: 15px; padding-bottom: 8px; 
+                       border-bottom: 2px solid #e2e8f0; }
+        .div-team { padding: 10px; margin-bottom: 8px; background: #f8fafc; 
+                    border-radius: 8px; display: flex; justify-content: space-between; }
+        .analysis { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); 
+                    border-radius: 15px; padding: 25px; margin: 30px 0; }
+        .analysis h2 { color: #92400e; margin-bottom: 15px; }
+        .draft-analysis { background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); 
+                    border-radius: 15px; padding: 25px; margin: 30px 0; }
+        .draft-analysis h2 { color: #7f1d1d; margin-bottom: 15px; }
+        .analysis-item { background: white; border-radius: 10px; padding: 15px; margin-bottom: 15px; }
+        .analysis-item h3 { color: #1e293b; margin-bottom: 10px; }
+        .legend { display: flex; gap: 20px; justify-content: center; margin: 30px 0; 
+                  flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 8px; padding: 10px 20px;
+                       background: #f1f5f9; border-radius: 10px; }
+        .legend-box { width: 20px; height: 20px; border-radius: 4px; }
+        .table-embed {
+            width: 100%;
+            border: none;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            height: 1300px;
+        }
+        @media (max-width: 1024px) {
+            .conferences { grid-template-columns: 1fr; }
+            .table-embed { height: 2400px; }
+        }
+        .logo-container { /* NEUER CONTAINER FÜR DIE ZENTRIERUNG */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container"> <img src="../docs/madzone.png" alt="MadZone Logo" /></div>
+        <h1>🏈 MadZone Playoff Race</h1>
+        <div class="subtitle">Remaining Strength of Schedule Analysis</div>
+        
+        <iframe src="playoff_race_table.html" class="table-embed" id="tableFrame"></iframe>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-box" style="background: #3b82f6;"></div>
+                <span>Division Leaders (Seeds 1-4)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #22c55e;"></div>
+                <span>Wild Card (Seeds 5-7)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #eab308;"></div>
+                <span>Bubble (>5% chance)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #ef4444;"></div>
+                <span>Long Shot (<5%)</span>
+            </div>
+        </div>
+
+        <div class="conferences">
+            <div class="conference">
+                <h2>AFC Playoff Picture</h2>
+                <div class="playoff-team seed-1">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-div">Seed 1</span>
+                            <span class="team-name">Dolphins</span>
+                        </div>
+                        <span class="team-record">14-2</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 100.0%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.388<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Patriots</span><span class="opponent-details rank-weak">#27</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                        <span> • East</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-2">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-div">Seed 2</span>
+                            <span class="team-name">Jaguars</span>
+                        </div>
+                        <span class="team-record">13-3</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 100.0%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.416<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Titans</span><span class="opponent-details rank-mid">#16</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                        <span> • South</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-3">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-div">Seed 3</span>
+                            <span class="team-name">Browns</span>
+                        </div>
+                        <span class="team-record">12-4</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 100.0%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.388<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Bengals</span><span class="opponent-details rank-mid">#18</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                        <span> • North</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-4">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-div">Seed 4</span>
+                            <span class="team-name">Broncos</span>
+                        </div>
+                        <span class="team-record">11-4</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 100.0%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.445<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 16: Chiefs</span><span class="opponent-details rank-weak">#25</span></div><div class="opponent-row"><span class="opponent-name">Week 17: Chargers</span><span class="opponent-details rank-weak">#21</span></div></div></span>
+                        <span>•</span>
+                        <span>2 games left</span>
+                        <span> • West</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-wc">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-wc">WC 5</span>
+                            <span class="team-name">Jets</span>
+                        </div>
+                        <span class="team-record">10-6</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 100.0%</span>
+                        <span>•</span>
+                        <span class="sos-badge ">SOS: 0.522<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Bills</span><span class="opponent-details rank-mid">#14</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-wc">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-wc">WC 6</span>
+                            <span class="team-name">Texans</span>
+                        </div>
+                        <span class="team-record">8-7</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 93.1%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.400<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 16: Chargers</span><span class="opponent-details rank-weak">#21</span></div><div class="opponent-row"><span class="opponent-name">Week 17: Colts</span><span class="opponent-details rank-weak">#31</span></div></div></span>
+                        <span>•</span>
+                        <span>2 games left</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-wc">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-wc">WC 7</span>
+                            <span class="team-name">Bills</span>
+                        </div>
+                        <span class="team-record">8-7</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 76.8%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.694<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 16: Eagles</span><span class="opponent-details rank-elite">#2</span></div><div class="opponent-row"><span class="opponent-name">Week 17: Jets</span><span class="opponent-details rank-elite">#10</span></div></div></span>
+                        <span>•</span>
+                        <span>2 games left</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-bubble">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-bubble">#8</span>
+                            <span class="team-name">Titans</span>
+                        </div>
+                        <span class="team-record">8-8</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 24.0%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.684<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Jaguars</span><span class="opponent-details rank-elite">#3</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                    </div>
+                </div>
+            </div>
+            <div class="conference">
+                <h2>NFC Playoff Picture</h2>
+                <div class="playoff-team seed-1">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-div">Seed 1</span>
+                            <span class="team-name">Eagles</span>
+                        </div>
+                        <span class="team-record">12-3</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 100.0%</span>
+                        <span>•</span>
+                        <span class="sos-badge ">SOS: 0.541<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 16: Bills</span><span class="opponent-details rank-mid">#14</span></div><div class="opponent-row"><span class="opponent-name">Week 17: Commanders</span><span class="opponent-details rank-mid">#17</span></div></div></span>
+                        <span>•</span>
+                        <span>2 games left</span>
+                        <span> • East</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-2">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-div">Seed 2</span>
+                            <span class="team-name">Packers</span>
+                        </div>
+                        <span class="team-record">12-4</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 100.0%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.588<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Vikings</span><span class="opponent-details rank-mid">#12</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                        <span> • North</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-3">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-div">Seed 3</span>
+                            <span class="team-name">Buccaneers</span>
+                        </div>
+                        <span class="team-record">12-4</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 100.0%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.781<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Panthers</span><span class="opponent-details rank-mid">#13</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                        <span> • South</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-4">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-div">Seed 4</span>
+                            <span class="team-name">49ers</span>
+                        </div>
+                        <span class="team-record">7-9</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 20.9%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.369<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Seahawks</span><span class="opponent-details rank-weak">#22</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                        <span> • West</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-wc">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-wc">WC 5</span>
+                            <span class="team-name">Saints</span>
+                        </div>
+                        <span class="team-record">11-5</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 99.8%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.231<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Falcons</span><span class="opponent-details rank-weak">#28</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-wc">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-wc">WC 6</span>
+                            <span class="team-name">Huskies</span>
+                        </div>
+                        <span class="team-record">11-5</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 91.4%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.244<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Giants</span><span class="opponent-details rank-weak">#32</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-wc">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-wc">WC 7</span>
+                            <span class="team-name">Bears</span>
+                        </div>
+                        <span class="team-record">10-6</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 65.2%</span>
+                        <span>•</span>
+                        <span class="sos-badge ">SOS: 0.459<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Lions</span><span class="opponent-details rank-weak">#26</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-bubble">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-bubble">#8</span>
+                            <span class="team-name">Vikings</span>
+                        </div>
+                        <span class="team-record">10-6</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 20.6%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.684<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Packers</span><span class="opponent-details rank-elite">#5</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-bubble">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-bubble">#9</span>
+                            <span class="team-name">Panthers</span>
+                        </div>
+                        <span class="team-record">9-6</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 22.6%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.556<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 16: Seahawks</span><span class="opponent-details rank-weak">#22</span></div><div class="opponent-row"><span class="opponent-name">Week 17: Buccaneers</span><span class="opponent-details rank-elite">#4</span></div></div></span>
+                        <span>•</span>
+                        <span>2 games left</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-bubble">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-bubble">#10</span>
+                            <span class="team-name">Cardinals</span>
+                        </div>
+                        <span class="team-record">7-9</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 72.4%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.206<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Rams</span><span class="opponent-details rank-weak">#29</span></div></div></span>
+                        <span>•</span>
+                        <span>1 games left</span>
+                    </div>
+                </div>
+                <div class="playoff-team seed-bubble">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-bubble">#11</span>
+                            <span class="team-name">Seahawks</span>
+                        </div>
+                        <span class="team-record">6-9</span>
+                    </div>
+                    <div class="team-details">
+                        <span>Playoff Chance: 6.7%</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.631<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 16: Panthers</span><span class="opponent-details rank-mid">#13</span></div><div class="opponent-row"><span class="opponent-name">Week 17: 49ers</span><span class="opponent-details rank-mid">#20</span></div></div></span>
+                        <span>•</span>
+                        <span>2 games left</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="draft-analysis">
+            <h2>📉 Rennen um die Top-Draft-Picks</h2>
+            <p style="text-align: center; margin-bottom: 20px; font-size: 1.1em;">Teams kämpfen um die besten Draft-Positionen. Weniger Siege = höherer Draft-Pick!</p>
+            
+            <div class="legend" style="margin-bottom: 20px;">
+                <div class="legend-item">
+                    <div class="legend-box" style="background: #dc2626;"></div>
+                    <span>Top-3 Picks (QB-Territorium)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background: #f59e0b;"></div>
+                    <span>Top-10 (Premium Talente)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background: #84cc16;"></div>
+                    <span>Picks 11-16 (Normaler Wert)</span>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
+                <div class="playoff-team pick-top3">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-top3">Pick 1</span>
+                            <span class="team-name">Giants</span>
+                        </div>
+                        <span class="team-record">2-14</span>
+                    </div>
+                    <div class="team-details">
+                        <span>NFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.659<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Huskies</span><span class="opponent-details rank-elite">#9</span></div></div></span>
+                        <span>•</span>
+                        <span>✓ Tank ist sicher</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~2.3-14.7
+                    </div>
+                </div>
+                <div class="playoff-team pick-top3">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-top3">Pick 2</span>
+                            <span class="team-name">Rams</span>
+                        </div>
+                        <span class="team-record">3-13</span>
+                    </div>
+                    <div class="team-details">
+                        <span>NFC</span>
+                        <span>•</span>
+                        <span class="sos-badge ">SOS: 0.491<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Cardinals</span><span class="opponent-details rank-mid">#19</span></div></div></span>
+                        <span>•</span>
+                        <span>→ Durchschnitt</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~3.5-13.5
+                    </div>
+                </div>
+                <div class="playoff-team pick-top3">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-top3">Pick 3</span>
+                            <span class="team-name">Colts</span>
+                        </div>
+                        <span class="team-record">3-13</span>
+                    </div>
+                    <div class="team-details">
+                        <span>AFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.444<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Texans</span><span class="opponent-details rank-mid">#15</span></div></div></span>
+                        <span>•</span>
+                        <span>⚠️ Risiko von Siegen!</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~3.6-13.4
+                    </div>
+                </div>
+                <div class="playoff-team pick-top10">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-top10">Pick 4</span>
+                            <span class="team-name">Ravens</span>
+                        </div>
+                        <span class="team-record">3-13</span>
+                    </div>
+                    <div class="team-details">
+                        <span>AFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.338<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Steelers</span><span class="opponent-details rank-weak">#24</span></div></div></span>
+                        <span>•</span>
+                        <span>⚠️ Risiko von Siegen!</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~3.7-13.3
+                    </div>
+                </div>
+                <div class="playoff-team pick-top10">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-top10">Pick 5</span>
+                            <span class="team-name">Patriots</span>
+                        </div>
+                        <span class="team-record">4-12</span>
+                    </div>
+                    <div class="team-details">
+                        <span>AFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.819<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Dolphins</span><span class="opponent-details rank-elite">#1</span></div></div></span>
+                        <span>•</span>
+                        <span>✓ Tank ist sicher</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~4.2-12.8
+                    </div>
+                </div>
+                <div class="playoff-team pick-top10">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-top10">Pick 6</span>
+                            <span class="team-name">Falcons</span>
+                        </div>
+                        <span class="team-record">4-12</span>
+                    </div>
+                    <div class="team-details">
+                        <span>NFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.625<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Saints</span><span class="opponent-details rank-elite">#8</span></div></div></span>
+                        <span>•</span>
+                        <span>✓ Tank ist sicher</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~4.4-12.6
+                    </div>
+                </div>
+                <div class="playoff-team pick-top10">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-top10">Pick 7</span>
+                            <span class="team-name">Lions</span>
+                        </div>
+                        <span class="team-record">5-11</span>
+                    </div>
+                    <div class="team-details">
+                        <span>NFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.681<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Bears</span><span class="opponent-details rank-mid">#11</span></div></div></span>
+                        <span>•</span>
+                        <span>✓ Tank ist sicher</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~5.3-11.7
+                    </div>
+                </div>
+                <div class="playoff-team pick-top10">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-top10">Pick 8</span>
+                            <span class="team-name">Chiefs</span>
+                        </div>
+                        <span class="team-record">5-10</span>
+                    </div>
+                    <div class="team-details">
+                        <span>AFC</span>
+                        <span>•</span>
+                        <span class="sos-badge ">SOS: 0.541<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 16: Broncos</span><span class="opponent-details rank-elite">#7</span></div><div class="opponent-row"><span class="opponent-name">Week 17: Raiders</span><span class="opponent-details rank-weak">#23</span></div></div></span>
+                        <span>•</span>
+                        <span>→ Durchschnitt</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~5.9-11.1
+                    </div>
+                </div>
+                <div class="playoff-team pick-top10">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-top10">Pick 9</span>
+                            <span class="team-name">Raiders</span>
+                        </div>
+                        <span class="team-record">6-10</span>
+                    </div>
+                    <div class="team-details">
+                        <span>AFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.356<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Chiefs</span><span class="opponent-details rank-weak">#25</span></div></div></span>
+                        <span>•</span>
+                        <span>⚠️ Risiko von Siegen!</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~6.6-10.4
+                    </div>
+                </div>
+                <div class="playoff-team pick-top10">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-top10">Pick 10</span>
+                            <span class="team-name">Steelers</span>
+                        </div>
+                        <span class="team-record">6-10</span>
+                    </div>
+                    <div class="team-details">
+                        <span>AFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.287<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Ravens</span><span class="opponent-details rank-weak">#30</span></div></div></span>
+                        <span>•</span>
+                        <span>⚠️ Risiko von Siegen!</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~6.7-10.3
+                    </div>
+                </div>
+                <div class="playoff-team pick-rest">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-rest">Pick 11</span>
+                            <span class="team-name">Seahawks</span>
+                        </div>
+                        <span class="team-record">6-9</span>
+                    </div>
+                    <div class="team-details">
+                        <span>NFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.631<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 16: Panthers</span><span class="opponent-details rank-mid">#13</span></div><div class="opponent-row"><span class="opponent-name">Week 17: 49ers</span><span class="opponent-details rank-mid">#20</span></div></div></span>
+                        <span>•</span>
+                        <span>✓ Tank ist sicher</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~6.7-10.3
+                    </div>
+                </div>
+                <div class="playoff-team pick-rest">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-rest">Pick 12</span>
+                            <span class="team-name">Chargers</span>
+                        </div>
+                        <span class="team-record">6-9</span>
+                    </div>
+                    <div class="team-details">
+                        <span>AFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.588<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 16: Texans</span><span class="opponent-details rank-mid">#15</span></div><div class="opponent-row"><span class="opponent-name">Week 17: Broncos</span><span class="opponent-details rank-elite">#7</span></div></div></span>
+                        <span>•</span>
+                        <span>✓ Tank ist sicher</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~6.8-10.2
+                    </div>
+                </div>
+                <div class="playoff-team pick-rest">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-rest">Pick 13</span>
+                            <span class="team-name">Bengals</span>
+                        </div>
+                        <span class="team-record">7-9</span>
+                    </div>
+                    <div class="team-details">
+                        <span>AFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.787<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Browns</span><span class="opponent-details rank-elite">#6</span></div></div></span>
+                        <span>•</span>
+                        <span>✓ Tank ist sicher</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~7.2-9.8
+                    </div>
+                </div>
+                <div class="playoff-team pick-rest">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-rest">Pick 14</span>
+                            <span class="team-name">Commanders</span>
+                        </div>
+                        <span class="team-record">7-9</span>
+                    </div>
+                    <div class="team-details">
+                        <span>NFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-hard">SOS: 0.713<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Eagles</span><span class="opponent-details rank-elite">#2</span></div></div></span>
+                        <span>•</span>
+                        <span>✓ Tank ist sicher</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~7.3-9.7
+                    </div>
+                </div>
+                <div class="playoff-team pick-rest">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-rest">Pick 15</span>
+                            <span class="team-name">49ers</span>
+                        </div>
+                        <span class="team-record">7-9</span>
+                    </div>
+                    <div class="team-details">
+                        <span>NFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.369<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Seahawks</span><span class="opponent-details rank-weak">#22</span></div></div></span>
+                        <span>•</span>
+                        <span>⚠️ Risiko von Siegen!</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~7.6-9.4
+                    </div>
+                </div>
+                <div class="playoff-team pick-rest">
+                    <div class="team-header">
+                        <div>
+                            <span class="seed-badge badge-pick-rest">Pick 16</span>
+                            <span class="team-name">Cardinals</span>
+                        </div>
+                        <span class="team-record">7-9</span>
+                    </div>
+                    <div class="team-details">
+                        <span>NFC</span>
+                        <span>•</span>
+                        <span class="sos-badge sos-easy">SOS: 0.206<div class="sos-tooltip"><div class="tooltip-title">Remaining Schedule</div><div class="opponent-row"><span class="opponent-name">Week 17: Rams</span><span class="opponent-details rank-weak">#29</span></div></div></span>
+                        <span>•</span>
+                        <span>⚠️ Risiko von Siegen!</span>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 0.85em; color: #64748b;">
+                        Prognose: ~7.8-9.2
+                    </div>
+                </div>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="analysis">
+            <h2>🧮 Wie werden die Playoff-Chancen berechnet? Die Formel erklärt</h2>
+            
+            <div class="analysis-item">
+                <p style="margin-bottom: 15px;">Also gut, Leute, lasst uns klären, wie ich diese Prozentzahlen für die Chancen berechne. Das ist nicht nur eine zufällige Zahl – es wird die <strong>Monte-Carlo-Methode</strong> verwendet, genau wie bei der New York Times! Dabei simuliert der Computer 1000 Saisons und sieht, in wie vielen davon Ihr Team in die Playoffs einzieht.</p>
+                
+                <h3 style="margin-top: 20px;">🎲 Schritt 1: Simulation der restlichen Spiele</h3>
+                <p>Für jedes noch nicht gespielte Spiel wird ein zufälliges Ergebnis basierend auf der Stärke der Teams ermittelt:</p>
+                <ul style="margin: 10px 0 10px 25px;">
+                    <li>Wir berechnen das <strong>Team-Rating</strong> = 70% Win% + 30% Past SoS (Stärke der gespielten Spiele)</li>
+                    <li>Siegwahrscheinlichkeit = Rating Heimteam / (Rating Heimteam + Rating Gastteam)</li>
+                    <li>Begrenzung: Minimum 25%, Maximum 75% (keine Garantien in Madden!)</li>
+                    <li>Wir werfen einen virtuellen Würfel – das Team gewinnt, wenn seine Wahrscheinlichkeit > Zufallszahl ist</li>
+                </ul>
+                <p style="background: #fef3c7; padding: 10px; border-radius: 5px; margin: 10px 0;">
+                    <strong>Beispiel:</strong> Cowboys (Win% 57%, Past SoS 0.48) spielen gegen Chargers (Win% 54%, Past SoS 0.52).<br>
+                    Rating Cowboys = (0.57 × 0.7) + (0.48 × 0.3) = 0.543<br>
+                    Rating Chargers = (0.54 × 0.7) + (0.52 × 0.3) = 0.534<br>
+                    Siegwahrscheinlichkeit Cowboys = 0.543 / (0.543 + 0.534) = <strong>50.4%</strong><br>
+                    Der Würfel ergab 0.38 → 38% < 50.4% → <strong>Cowboys gewonnen!</strong>
+                </p>
+                
+                <h3 style="margin-top: 20px;">🏆 Schritt 2: Ermittlung der Playoff-Teams</h3>
+                <p>Nach der Simulation aller Spiele wenden wir die <strong>OFFIZIELLEN NFL-Regeln</strong> an, um die 7 Playoff-Teams jeder Conference zu bestimmen:</p>
+                
+                <p style="margin-top: 15px;"><strong>A) Finde die 4 Divisionsieger:</strong></p>
+                <ol style="margin: 10px 0 10px 25px;">
+                    <li>Sortiere die Teams in jeder Division nach den NFL-Tiebreakern:</li>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>1. Win %</strong> - Gesamt-Siegprozentzahl (das Wichtigste!)</li>
+                        <li><strong>2. Head-to-Head</strong> - Direkte Duelle (wer hat wen geschlagen)</li>
+                        <li><strong>3. Division %</strong> - Siegprozentzahl innerhalb der Division</li>
+                        <li><strong>4. Conference %</strong> - Siegprozentzahl innerhalb der Conference</li>
+                        <li><strong>5. Strength of Victory</strong> - Stärke der besiegten Teams</li>
+                        <li><strong>6. Strength of Schedule</strong> - Stärke aller Gegner</li>
+                    </ul>
+                    <li>Der Sieger jeder Division = automatisch in den Playoffs!</li>
+                </ol>
+                
+                <p style="margin-top: 15px;"><strong>B) Wähle die 3 Wild Card Teams:</strong></p>
+                <ol style="margin: 10px 0 10px 25px;">
+                    <li>Nimm alle Teams der Conference, die <strong>ihre Division nicht gewonnen haben</strong></li>
+                    <li>Sortiere nach denselben Tiebreakern (Win% → H2H → Conf% → SoV → SoS)</li>
+                    <li>Die Top-3 davon = Wild Card Plätze!</li>
+                </ol>
+                
+                <p style="background: #dbeafe; padding: 12px; border-radius: 5px; margin: 15px 0;">
+                    <strong>💡 Wichtig:</strong> In jeder Simulation werden H2H-Rekorde, Divisions- und Conference-Siege aktualisiert!<br>
+                    Wenn die Cowboys in einer Simulation die Giants schlagen, wird der H2H-Rekord der Cowboys 1-0 und der Divisionsrekord verbessert sich. Das beeinflusst die Tiebreaker!
+                </p>
+                
+                <h3 style="margin-top: 20px;">📊 Schritt 3: Wahrscheinlichkeiten berechnen</h3>
+                <p>Wir führen diese Simulation <strong>1.000 Mal</strong> für jedes Team durch und berechnen drei Arten von Wahrscheinlichkeiten:</p>
+                
+                <div style="background: #f1f5f9; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                    <p style="margin-bottom: 10px;"><strong>🎯 Playoff-Wahrscheinlichkeit:</strong></p>
+                    <code style="background: white; padding: 8px; display: block; border-radius: 4px;">
+                        (Anzahl der Simulationen mit Playoff-Einzug / 1000) × 100%
+                    </code>
+                    <p style="margin: 10px 0;"><strong>Beispiel:</strong> Wenn die Lions in 918 von 1000 Simulationen in die Playoffs kamen = <strong>91.8%</strong></p>
+                    
+                    <p style="margin: 15px 0 10px;"><strong>👑 Divisionssieg:</strong></p>
+                    <code style="background: white; padding: 8px; display: block; border-radius: 4px;">
+                        (Anzahl der Simulationen mit Divisionssieg / 1000) × 100%
+                    </code>
+                    <p style="margin: 10px 0;"><strong>Beispiel:</strong> Die Cowboys gewannen die NFC East in 433 von 1000 Simulationen = <strong>43.3%</strong></p>
+                    
+                    <p style="margin: 15px 0 10px;"><strong>😎 Erstrunden-Freilos (Seed #1):</strong></p>
+                    <code style="background: white; padding: 8px; display: block; border-radius: 4px;">
+                        (Anzahl der Simulationen mit dem besten Conference-Rekord / 1000) × 100%
+                    </code>
+                    <p style="margin: 10px 0;"><strong>Wichtig:</strong> Nur das Team mit <strong>Seed #1</strong> erhält ein Freilos! Wir sortieren die Divisionssieger in jeder Simulation nach ihrem Rekord.</p>
+                </div>
+                
+                <h3 style="margin-top: 20px;">🔥 Warum Monte Carlo besser ist als Formeln?</h3>
+                <ol style="margin: 10px 0 15px 25px;">
+                    <li><strong>Berücksichtigt ALLE möglichen Szenarien</strong> - versucht nicht zu raten, sondern modelliert die Realität</li>
+                    <li><strong>Wendet echte NFL-Tiebreaker an</strong> - in jeder Simulation!</li>
+                    <li><strong>Zeigt Wechselwirkungen</strong> - wenn die Lions verlieren, steigen die Chancen der Bears automatisch</li>
+                    <li><strong>Genauer bei engem Rennen</strong> - zwei 8-5 Teams können aufgrund des Spielplans unterschiedliche Chancen haben</li>
+                    <li><strong>Wird von NYT, FiveThirtyEight verwendet</strong> - Industriestandard!</li>
+                </ol>
+                
+                <h3 style="margin-top: 20px;">💡 Realbeispiel - Cowboys 70% Playoffs erklärt</h3>
+                <p style="color: #0f172a; font-weight: bold; margin-top: 15px;">🤠 Cowboys (8-6) haben 70.3% Playoff-Chancen. Wie kommt das zustande?</p>
+                
+                <p><strong>Restliche Spiele der Cowboys:</strong></p>
+                <ul style="margin: 10px 0 10px 25px;">
+                    <li>Woche 15: vs Chargers (7-6, Past SoS 0.516)</li>
+                    <li>Woche 16: @ Commanders (7-6, Past SoS 0.542)</li>
+                    <li>Woche 17: @ Giants (8-5, Past SoS 0.558)</li>
+                </ul>
+                
+                <p style="margin-top: 15px;"><strong>Simulation #1 - Cowboys kommen in die Playoffs:</strong></p>
+                <ol style="margin: 10px 0 10px 25px; background: #f0fdf4; padding: 15px; border-radius: 8px;">
+                    <li><strong>vs Chargers:</strong> Rating Cowboys 0.545 vs Chargers 0.532 → Wahrscheinlichkeit 50.6% → Würfel 0.38 → SIEG ✓</li>
+                    <li><strong>@ Commanders:</strong> Cowboys 0.545 vs Commanders 0.540 → Wahrscheinlichkeit 50.2% → Würfel 0.62 → NIEDERLAGE ✗</li>
+                    <li><strong>@ Giants:</strong> Cowboys 0.545 vs Giants 0.598 → Wahrscheinlichkeit 47.7% → Würfel 0.41 → SIEG ✓</li>
+                    <li><strong>Ergebnis:</strong> Cowboys 10-7, Giants 9-7, Commanders 8-7</li>
+                    <li><strong>Tiebreaker angewendet:</strong> Cowboys gewinnen NFC East (H2H 1-0 vs Giants) → PLAYOFFS! ✓</li>
+                </ol>
+                
+                <p style="margin-top: 15px;"><strong>Simulation #2 - Cowboys verpassen die Playoffs:</strong></p>
+                <ol style="margin: 10px 0 10px 25px; background: #fef2f2; padding: 15px; border-radius: 8px;">
+                    <li><strong>vs Chargers:</strong> Würfel 0.67 → NIEDERLAGE ✗</li>
+                    <li><strong>@ Commanders:</strong> Würfel 0.29 → SIEG ✓</li>
+                    <li><strong>@ Giants:</strong> Würfel 0.81 → NIEDERLAGE ✗</li>
+                    <li><strong>Ergebnis:</strong> Cowboys 9-8, Giants 10-7</li>
+                    <li><strong>Wild Card geprüft:</strong> Cowboys auf Platz 8 in der NFC → KEINE PLAYOFFS! ✗</li>
+                </ol>
+                
+                <p style="margin-top: 15px;"><strong>Nach 1000 Simulationen:</strong> Cowboys kamen 703 Mal weiter = <strong>70.3%</strong></p>
+                
+                <p style="color: #dc2626; font-weight: bold; margin-top: 20px;">⚠️ Warum haben die Broncos (12-1) keine 100% für Seed #1?</p>
+                <p>Obwohl sie fast garantiert in den Playoffs sind:</p>
+                <ul style="margin: 10px 0 10px 25px;">
+                    <li>Playoff-Chance = <strong>100%</strong> (in allen 1000 Simulationen dabei)</li>
+                    <li>Chance auf Seed #1 = <strong>80.2%</strong> (in 198 Simulationen überholten sie die Titans oder Patriots!)</li>
+                    <li>Szenario: Broncos verlieren 2 Spiele UND Titans gewinnen 3-0 → Rekorde gleich → Tiebreaker entscheiden</li>
+                    <li>Unwahrscheinlich, aber möglich - das zeigt Monte Carlo!</li>
+                </ul>
+                
+                <p style="margin-top: 20px; padding: 15px; background: #dbeafe; border-left: 4px solid #3b82f6; border-radius: 4px;">
+                    <strong>📌 Kern der Monte-Carlo-Methode:</strong><br>
+                    Wir versuchen nicht, die Zukunft mit einer Formel vorherzusagen. Stattdessen spielen wir die Saison 1000 Mal mit unterschiedlichen Zufallsergebnissen, aber unter Berücksichtigung der tatsächlichen Teamstärke. Wir bekommen nicht "was passieren wird", sondern "was passieren KANN und mit welcher Wahrscheinlichkeit". Das ist statistische Magie, Freunde! 🎯✨
+                </p>
+                
+                <p style="margin-top: 15px;">So läuft das, Leute. Keine Formeln und Vermutungen, sondern reine mathematische Simulation der Realität! 🔥</p>
+            </div>
+        </div>
+        
+                <div style="text-align: center; color: #64748b; margin-top: 30px; padding: 20px; background: #f8fafc; border-radius: 10px;">
+            <p><strong>Methodik:</strong> SOS (Strength of Schedule) wird basierend auf den Ratings der Gegner in Offensive, Defensive und Gesamtleistung berechnet.</p>
+            <p style="margin-top: 10px;">Hohes SOS = Schwerer Spielplan | Niedriges SOS = Leichter Weg in die Playoffs</p>
+        </div>
+    </div>
+    <script>
+        function sendHeight() {
+            const height = document.documentElement.scrollHeight;
+            window.parent.postMessage({ type: 'resize', height: height }, '*');
+        }
+        
+        window.addEventListener('load', function() {
+            setTimeout(sendHeight, 200);
+        });
+        
+        window.addEventListener('resize', sendHeight);
+    </script>
+</body>
+</html>
