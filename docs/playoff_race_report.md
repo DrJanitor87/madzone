@@ -1,4 +1,4 @@
-# 🏈 NFL MadZone Playoff Rennen Analyse - Woche 14
+# 🏈 NFL MadZone Playoff Rennen Analyse
 
 ## Aktuelle Playoff-Lage
 
@@ -15,8 +15,8 @@
 **Wild Card Rennen:**
 - **Seed 5:** Jets (10-6) | Playoffs: 100.0% | SOS: 0.528
 - **Seed 6:** Texans (9-7) | Playoffs: 100.0% | SOS: 0.269
-- **Seed 7:** Bills (9-7) | Playoffs: 84.4% | SOS: 0.678
-- **Seed 8:** Titans (8-8) | Playoffs: 15.0% | SOS: 0.688
+- **Seed 7:** Bills (9-7) | Playoffs: 83.0% | SOS: 0.678
+- **Seed 8:** Titans (8-8) | Playoffs: 14.6% | SOS: 0.688
 - **Seed 9:** Bengals (7-9) | Playoffs: 0.0% | SOS: 0.778
 
 **Auf der Kippe:**
@@ -33,14 +33,14 @@
 - **Seed 4:** 49ers (7-9) - West | Playoffs: 99.5% | SOS: 0.331
 
 **Wild Card Rennen:**
-- **Seed 5:** Saints (11-5) | Playoffs: 99.6% | SOS: 0.231
-- **Seed 6:** Huskies (11-5) | Playoffs: 93.1% | SOS: 0.244
+- **Seed 5:** Saints (11-5) | Playoffs: 99.5% | SOS: 0.231
+- **Seed 6:** Huskies (11-5) | Playoffs: 90.9% | SOS: 0.244
 - **Seed 7:** Bears (10-6) | Playoffs: 53.9% | SOS: 0.459
-- **Seed 8:** Vikings (10-6) | Playoffs: 13.9% | SOS: 0.694
-- **Seed 9:** Panthers (10-6) | Playoffs: 39.2% | SOS: 0.728
+- **Seed 8:** Vikings (10-6) | Playoffs: 16.4% | SOS: 0.694
+- **Seed 9:** Panthers (10-6) | Playoffs: 38.9% | SOS: 0.728
 
 **Auf der Kippe:**
-- **10.** Cardinals (7-9) | Playoffs: 80.0% | SOS: 0.197
+- **10.** Cardinals (7-9) | Playoffs: 82.5% | SOS: 0.197
 - **11.** Commanders (7-9) | Playoffs: 0.0% | SOS: 0.716
 - **12.** Seahawks (6-10) | Playoffs: 0.0% | SOS: 0.481
 
@@ -60,8 +60,8 @@
 Drei Teams bei 8-5, eines bei 7-6. Jeder kann diese Division gewinnen:
 
 - **Buccaneers** (12-4): Playoffs 100.0% | SOS 0.816
-- **Saints** (11-5): Playoffs 99.6% | SOS 0.231
-- **Panthers** (10-6): Playoffs 39.2% | SOS 0.728
+- **Saints** (11-5): Playoffs 99.5% | SOS 0.231
+- **Panthers** (10-6): Playoffs 38.9% | SOS 0.728
 - **Falcons** (4-12): Playoffs 0.0% | SOS 0.631
 
 **Analyse:** Falcons (0.433) vs Saints (0.612) – ein massiver SOS-Unterschied von 0.179 könnte die Division drehen!
