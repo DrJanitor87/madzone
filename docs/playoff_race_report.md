@@ -14,13 +14,13 @@
 
 **Wild Card Rennen:**
 - **Seed 5:** Jets (10-6) | Playoffs: 100.0% | SOS: 0.522
-- **Seed 6:** Texans (8-7) | Playoffs: 93.1% | SOS: 0.400
-- **Seed 7:** Bills (8-7) | Playoffs: 76.8% | SOS: 0.694
-- **Seed 8:** Titans (8-8) | Playoffs: 24.0% | SOS: 0.684
+- **Seed 6:** Texans (8-7) | Playoffs: 92.8% | SOS: 0.400
+- **Seed 7:** Bills (8-7) | Playoffs: 79.7% | SOS: 0.694
+- **Seed 8:** Titans (8-8) | Playoffs: 25.9% | SOS: 0.684
 - **Seed 9:** Bengals (7-9) | Playoffs: 0.0% | SOS: 0.787
 
 **Auf der Kippe:**
-- **10.** Chargers (6-9) | Playoffs: 2.0% | SOS: 0.588
+- **10.** Chargers (6-9) | Playoffs: 1.9% | SOS: 0.588
 - **11.** Steelers (6-10) | Playoffs: 0.0% | SOS: 0.287
 - **12.** Raiders (6-10) | Playoffs: 0.0% | SOS: 0.356
 
@@ -33,16 +33,16 @@
 - **Seed 4:** 49ers (7-9) - West | Playoffs: 99.5% | SOS: 0.369
 
 **Wild Card Rennen:**
-- **Seed 5:** Saints (11-5) | Playoffs: 99.8% | SOS: 0.231
-- **Seed 6:** Huskies (11-5) | Playoffs: 91.4% | SOS: 0.244
-- **Seed 7:** Bears (10-6) | Playoffs: 65.2% | SOS: 0.459
-- **Seed 8:** Vikings (10-6) | Playoffs: 20.6% | SOS: 0.684
-- **Seed 9:** Panthers (9-6) | Playoffs: 22.6% | SOS: 0.556
+- **Seed 5:** Saints (11-5) | Playoffs: 98.8% | SOS: 0.231
+- **Seed 6:** Huskies (11-5) | Playoffs: 91.0% | SOS: 0.244
+- **Seed 7:** Bears (10-6) | Playoffs: 64.9% | SOS: 0.459
+- **Seed 8:** Vikings (10-6) | Playoffs: 21.5% | SOS: 0.684
+- **Seed 9:** Panthers (9-6) | Playoffs: 22.2% | SOS: 0.556
 
 **Auf der Kippe:**
-- **10.** Cardinals (7-9) | Playoffs: 72.4% | SOS: 0.206
+- **10.** Cardinals (7-9) | Playoffs: 68.7% | SOS: 0.206
 - **11.** Commanders (7-9) | Playoffs: 0.0% | SOS: 0.713
-- **12.** Seahawks (6-9) | Playoffs: 6.7% | SOS: 0.631
+- **12.** Seahawks (6-9) | Playoffs: 9.6% | SOS: 0.631
 
 ---
 
@@ -60,8 +60,8 @@
 Drei Teams bei 8-5, eines bei 7-6. Jeder kann diese Division gewinnen:
 
 - **Buccaneers** (12-4): Playoffs 100.0% | SOS 0.781
-- **Saints** (11-5): Playoffs 99.8% | SOS 0.231
-- **Panthers** (9-6): Playoffs 22.6% | SOS 0.556
+- **Saints** (11-5): Playoffs 98.8% | SOS 0.231
+- **Panthers** (9-6): Playoffs 22.2% | SOS 0.556
 - **Falcons** (4-12): Playoffs 0.0% | SOS 0.625
 
 **Analyse:** Falcons (0.433) vs Saints (0.612) – ein massiver SOS-Unterschied von 0.179 könnte die Division drehen!
