@@ -41,7 +41,7 @@
 
 **Auf der Kippe:**
 - **10.** Commanders (8-9) | Playoffs: 0.0% | SOS: 0.000
-- **11.** Cardinals (7-9) | Playoffs: 80.9% | SOS: 0.191
+- **11.** Cardinals (7-9) | Playoffs: 80.0% | SOS: 0.191
 - **12.** Seahawks (6-10) | Playoffs: 0.0% | SOS: 0.509
 
 ---
