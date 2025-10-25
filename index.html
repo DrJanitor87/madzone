@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadZone Stats & Analysis</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            padding: 20px; 
+            color: #333; 
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 20px; 
+            padding: 40px; 
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3); 
+        }
+        h1 { 
+            text-align: center; 
+            color: #1e293b; 
+            margin-bottom: 15px; 
+            font-size: 2.5em; 
+        }
+        .subtitle { 
+            text-align: center; 
+            color: #64748b; 
+            margin-bottom: 40px; 
+            font-size: 1.1em; 
+        }
+        .section { 
+            margin-bottom: 35px; 
+        }
+        .section h2 { 
+            color: #0f172a; 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 3px solid #3b82f6; 
+            font-size: 1.5em;
+        }
+        .resource-list { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+        }
+        .resource-item { 
+            background: #f8fafc; 
+            border-radius: 10px; 
+            padding: 20px; 
+            border-left: 5px solid #3b82f6; 
+            transition: transform 0.2s, box-shadow 0.2s; 
+            text-decoration: none;
+            display: block;
+        }
+        .resource-item:hover { 
+            transform: translateX(5px); 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .resource-title { 
+            font-size: 1.2em; 
+            font-weight: bold; 
+            color: #1e293b; 
+            margin-bottom: 5px; 
+        }
+        .resource-desc { 
+            color: #64748b; 
+            font-size: 0.95em; 
+        }
+        .footer { 
+            text-align: center; 
+            margin-top: 40px; 
+            padding-top: 20px; 
+            border-top: 1px solid #e2e8f0; 
+            color: #94a3b8; 
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MadZone Stats & Analysis</h1>
+        <p class="subtitle">Fantasy Football Analytics & Reports</p>
+        
+        <div class="section">
+            <h2>Reports & Visualizations</h2>
+            <div class="resource-list">
+                <a href="docs/playoff_race.html" class="resource-item">
+                    <div class="resource-title">Playoff Race</div>
+                    <div class="resource-desc">Playoff race visualization and analysis</div>
+                </a>
+                <a href="docs/playoff_race_table.html" class="resource-item">
+                    <div class="resource-title">Playoff Race Table</div>
+                    <div class="resource-desc">Detailed playoff race table</div>
+                </a>
+                <a href="docs/rankings_explorer.html" class="resource-item">
+                    <div class="resource-title">Rankings Explorer</div>
+                    <div class="resource-desc">🎯 12 strategic ranking visualizations (offensive/defensive balance, pass/rush philosophy, efficiency patterns)</div>
+                </a>
+                <a href="docs/sos_graphs.html" class="resource-item">
+                    <div class="resource-title">Sos Graphs</div>
+                    <div class="resource-desc">Visual analysis of team schedules and difficulty</div>
+                </a>
+                <a href="docs/stats_dashboard.html" class="resource-item">
+                    <div class="resource-title">Stats Dashboard</div>
+                    <div class="resource-desc">🏠 Main Stats Hub - Access all team analytics visualizations from one place</div>
+                </a>
+                <a href="docs/team_player_usage.html" class="resource-item">
+                    <div class="resource-title">Team Player Usage</div>
+                    <div class="resource-desc">👥 25 player usage graphs (target distribution + performance impact: INTs, sacks, efficiency, TDs)</div>
+                </a>
+                <a href="docs/team_stats_correlations.html" class="resource-item">
+                    <div class="resource-title">Team Stats Correlations</div>
+                    <div class="resource-desc">🔍 34 cross-metric correlation graphs revealing strategic insights</div>
+                </a>
+                <a href="docs/team_stats_explorer.html" class="resource-item">
+                    <div class="resource-title">Team Stats Explorer</div>
+                    <div class="resource-desc">📊 Interactive Win% correlation explorer with 20+ team metrics</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Playoff Race Images</h2>
+            <div class="resource-list">
+                <a href="docs/afc_compl.png" class="resource-item">
+                    <div class="resource-title">Afc Compl</div>
+                    <div class="resource-desc">AFC season completion metrics</div>
+                </a>
+                <a href="docs/afc_race.png" class="resource-item">
+                    <div class="resource-title">Afc Race</div>
+                    <div class="resource-desc">AFC playoff standings and race visualization</div>
+                </a>
+                <a href="docs/nfc_compl.png" class="resource-item">
+                    <div class="resource-title">Nfc Compl</div>
+                    <div class="resource-desc">NFC season completion metrics</div>
+                </a>
+                <a href="docs/nfc_race.png" class="resource-item">
+                    <div class="resource-title">Nfc Race</div>
+                    <div class="resource-desc">NFC playoff standings and race visualization</div>
+                </a>
+                <a href="docs/playoff_race.png" class="resource-item">
+                    <div class="resource-title">Playoff Race</div>
+                    <div class="resource-desc">playoff_race.png</div>
+                </a>
+                <a href="docs/remaning_race_sos.png" class="resource-item">
+                    <div class="resource-title">Remaning Race Sos</div>
+                    <div class="resource-desc">remaning_race_sos.png</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Strength of Schedule Images</h2>
+            <div class="resource-list">
+                <a href="docs/Afc_total_sos.png" class="resource-item">
+                    <div class="resource-title">Afc Total Sos</div>
+                    <div class="resource-desc">AFC conference strength of schedule breakdown</div>
+                </a>
+                <a href="docs/Tot_sos.png" class="resource-item">
+                    <div class="resource-title">Tot Sos</div>
+                    <div class="resource-desc">Overall league strength of schedule visualization</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Documentation</h2>
+            <div class="resource-list">
+                <a href="docs/nfl_playoff_tie.txt" class="resource-item">
+                    <div class="resource-title">Nfl Playoff Tie</div>
+                    <div class="resource-desc">Reference document for playoff tiebreaker scenarios</div>
+                </a>
+                <a href="docs/playoff_race_analysis.md" class="resource-item">
+                    <div class="resource-title">Playoff Race Analysis</div>
+                    <div class="resource-desc">Detailed analysis of playoff scenarios and race dynamics</div>
+                </a>
+                <a href="docs/playoff_race_report.md" class="resource-item">
+                    <div class="resource-title">Playoff Race Report</div>
+                    <div class="resource-desc">Playoff race summary report</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Other Files</h2>
+            <div class="resource-list">
+                <a href="docs/.gitignore" class="resource-item">
+                    <div class="resource-title">.gitignore</div>
+                    <div class="resource-desc">.gitignore</div>
+                </a>
+                <a href="docs/madzone.png" class="resource-item">
+                    <div class="resource-title">Madzone</div>
+                    <div class="resource-desc">madzone.png</div>
+                </a>
+                <a href="docs/nfc_total.png" class="resource-item">
+                    <div class="resource-title">Nfc Total</div>
+                    <div class="resource-desc">NFC conference strength of schedule breakdown</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            MadZone Statistics & Analysis Hub
+        </div>
+    </div>
+</body>
+</html>
