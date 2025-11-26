@@ -462,6 +462,7 @@
             yFormat: fmt2,
             title: '💥 Predictability Tax: Target Concentration vs Sacks',
             insight: 'Concentrated passing = defenders know where ball goes = more pressure? Or is it just bad O-lines?',
+            metricHelp: '<strong>Sack Rate:</strong> Prozentsatz der Sacks im Verhältnis zu (Passversuche + Sacks). Konzentration auf einen Receiver = Vorhersehbarkeit = mehr Sacks?',
             extraInfo: d => `WR1: ${d.wr1_name} - ${fmt2(d.sack_rate)}% sack rate`,
             metricHelp: '<strong>Sack Rate:</strong> Prozentsatz der Sacks von (Versuche + Sacks). Konzentration auf einen Receiver = Vorhersehbarkeit = mehr Sacks?',
             quadrantHelp: {
@@ -480,6 +481,7 @@
             yFormat: fmt2,
             title: '💥 TE Usage: Weapon or Safety Blanket?',
             insight: 'High TE usage with low sacks = protection weapon. High TE + high sacks = last resort checkdown.',
+            metricHelp: '<strong>TE + Sacks:</strong> Hohe TE-Nutzung bei niedrigen Sacks = Defensiv-Waffe. Beides hoch = letztes Mittel unter Druck.',
             extraInfo: d => `TE1: ${d.te1_name || 'N/A'} - ${fmt2(d.sack_rate)}% sack rate`,
             metricHelp: '<strong>TE + Sacks:</strong> Hohe TE-Nutzung bei wenigen Sacks = Schutzwaffe. Hohe Werte bei beidem = letztes Mittel unter Druck.',
             quadrantHelp: {
@@ -498,6 +500,7 @@
             yFormat: fmt2,
             title: '💥 Star Power vs Offensive Efficiency',
             insight: 'Elite receivers unlock efficiency? Or does spreading it around keep defenses honest?',
+            metricHelp: '<strong>Yards per Play:</strong> Durchschnittliche Yards pro Spielzug. Führen Elite-Receiver zu mehr Effizienz, oder hält die Verteilung des Balls die Verteidigung in Schach?',
             extraInfo: d => `Top 3: ${d.wr1_name}, ${d.wr2_name || 'N/A'}, ${d.wr3_name || 'N/A'}`,
             metricHelp: '<strong>Yards per Play:</strong> Durchschnittliche Yards pro Spielzug. Schalten Elite-Receiver Effizienz frei oder hält die Ballverteilung die Defense in Atem?',
             quadrantHelp: {
@@ -516,6 +519,7 @@
             yFormat: fmt2,
             title: '💥 Bellcow Effectiveness Test',
             insight: 'Does feeding one back work? Or do fresh legs from RBBC produce better yards per carry?',
+            metricHelp: '<strong>Rush Y/A:</strong> Yards pro Laufversuch. Effizienztest: Ein einziger Läufer vs. frische Beine eines Komitees – wer produziert mehr Yards?',
             extraInfo: d => `RB1: ${d.rb1_name} - ${fmt2(d.rush_yds_per_att)} Y/A`,
             metricHelp: '<strong>Rush Y/A:</strong> Yards pro Lauf. Effizienztest: Ein Läufer vs. frische Beine des Komitees – wer produziert mehr Yards?',
             quadrantHelp: {
@@ -552,6 +556,7 @@
             yFormat: fmt2,
             title: '💥 RB Checkdown Strategy: Smart or Desperate?',
             insight: 'High RB targets + high Y/A = designed weapon. High RB targets + low Y/A = QB under pressure dumping off.',
+            metricHelp: '<strong>Pass Y/A:</strong> Yards pro Passversuch. Hohe RB-Pässe + hoher Y/A = Waffe. Hohe RB-Pässe + niedriger Y/A = Checkdown unter Druck.',
             extraInfo: d => `RB1: ${d.rb1_name} - ${fmt2(d.pass_yds_per_att)} Y/A`,
             metricHelp: '<strong>Pass Y/A:</strong> Yards pro Passversuch. Viele RB-Pässe + hohes Y/A = Waffe. Viele RB-Pässe + niedriges Y/A = Abwurf unter Druck.',
             quadrantHelp: {
@@ -570,6 +575,7 @@
             yFormat: fmt2,
             title: '💥 Distribution Strategy vs Big Plays',
             insight: 'Does spreading the ball create more explosive opportunities? Or do stars make the big plays?',
+            metricHelp: '<strong>Explosive Plays:</strong> Spielzüge von 20+ Yards pro Spiel. Erzeugt die Verteilung des Balls mehr Explosivität, oder machen Stars die Big Plays?',
             extraInfo: d => `WR1: ${d.wr1_name} - ${fmt2(d.explosive_plays_per_game)} explosive plays/game`,
             metricHelp: '<strong>Explosive Plays:</strong> Spielzüge 20+ Yards pro Spiel. Schafft die Ballverteilung mehr explosive Momente oder machen die Stars die Big Plays?',
             quadrantHelp: {
@@ -588,6 +594,7 @@
             yFormat: fmt1,
             title: '💥 Ball Security: Bellcow vs Committee',
             insight: 'Feature backs fumble more from fatigue? Or do committees have worse ball security?',
+            metricHelp: '<strong>Turnovers:</strong> Gesamte Ballverluste. Verliert der Hauptläufer mehr durch Ermüdung, oder haben Komitees eine schlechtere Ballkontrolle?',
             extraInfo: d => `RB1: ${d.rb1_name} | RB2: ${d.rb2_name || 'N/A'}`,
             metricHelp: '<strong>Turnovers:</strong> Gesamtballverluste. Fumbeln Haupt-Läufer mehr wegen Müdigkeit oder haben Komitees schlechtere Ballkontrolle?',
             quadrantHelp: {
@@ -606,6 +613,7 @@
             yFormat: fmt2,
             title: '💥 WR-Heavy Offense Scoring Efficiency',
             insight: 'WR-centric attacks score more TDs? Or are TEs/RBs better in the red zone?',
+            metricHelp: '<strong>Pass TD Rate:</strong> Prozentsatz der Touchdowns pro Passversuch. Erzielen WR-zentrierte Angriffe mehr TDs, oder sind TE/RB besser in der Red Zone?',
             extraInfo: d => `WR1: ${d.wr1_name} | TE1: ${d.te1_name || 'N/A'}`,
             metricHelp: '<strong>Pass TD Rate:</strong> Prozentsatz der Touchdowns von Passversuchen. Erzielen WR-zentrierte Angriffe mehr TDs oder sind TEs/RBs in der Red Zone besser?',
             quadrantHelp: {
@@ -624,6 +632,7 @@
             yFormat: fmt1,
             title: '💥 TE Usage: High-Percentage Safety Valve',
             insight: 'TEs are easier throws = higher completion %? Proof that TEs are the ultimate security blanket.',
+            metricHelp: '<strong>Completion %:</strong> Prozentsatz der angekommenen Pässe. TE = einfachere Würfe = höherer Prozentsatz? Beweis, dass TE die ultimative Absicherung ist.',
             extraInfo: d => `TE1: ${d.te1_name || 'N/A'} - ${fmt1(d.pass_comp_pct)}% comp`,
             metricHelp: '<strong>Completion %:</strong> Prozentsatz abgeschlossener Pässe. TE = leichtere Würfe = höherer Prozentsatz? Beweis, dass TE die ultimative Absicherung ist.',
             quadrantHelp: {
@@ -642,6 +651,7 @@
             yFormat: fmt1,
             title: '💥 Star Receivers & Ball Protection',
             insight: 'Elite receivers protect the ball better? Or are teams with top WRs just better overall?',
+            metricHelp: '<strong>Turnover Diff:</strong> Turnover-Differenz (Gewinne - Verluste). Schützen Elite-Receiver den Ball besser, oder sind Teams mit Top-WRs einfach insgesamt besser?',
             extraInfo: d => `Top 3: ${d.wr1_name}, ${d.wr2_name || 'N/A'}, ${d.wr3_name || 'N/A'}`,
             metricHelp: '<strong>Turnover Diff:</strong> Ballverlustdifferenz (Ballgewinne - Ballverluste). Passen Elite-Receiver besser auf den Ball auf oder sind Teams mit Top-WR einfach insgesamt besser?',
             quadrantHelp: {
@@ -660,6 +670,7 @@
             yFormat: fmt2,
             title: '💥 Goal Line Back: Who Gets the Glory?',
             insight: 'Bellcows dominate goal-line work? Or do committees rotate in fresh power backs for TDs?',
+            metricHelp: '<strong>Rush TD Rate:</strong> Prozentsatz der Touchdowns pro Laufversuch. Dominieren Bellcows an der Goal Line, oder rotieren Komitees Power-Backs für TDs?',
             extraInfo: d => `RB1: ${d.rb1_name} | RB2: ${d.rb2_name || 'N/A'}`,
             metricHelp: '<strong>Rush TD Rate:</strong> Prozentsatz der Touchdowns von Läufen. Dominieren Bellcows an der Goal Line oder rotieren Komitees Power Backs für TDs rein?',
             quadrantHelp: {
@@ -678,6 +689,7 @@
             yFormat: fmt2,
             title: '💥 Target Overload: Does WR1 Drop More?',
             insight: 'Feeding one receiver = more drops from fatigue? Or do elite WRs have better hands?',
+            metricHelp: '<strong>Drop Rate:</strong> Prozentsatz der fallen gelassenen Pässe pro Targets. Führt die Überlastung eines Receivers zu mehr Drops durch Ermüdung, oder haben Elite-WRs bessere Hände?',
             extraInfo: d => `WR1: ${d.wr1_name} - ${fmt2(d.drop_rate)}% drop rate`,
             metricHelp: '<strong>Drop Rate:</strong> Prozentsatz der fallen gelassenen Pässe von Zielen. Einen Receiver füttern = mehr Drops durch Müdigkeit oder haben Elite-WR bessere Hände?',
             quadrantHelp: {
@@ -696,6 +708,7 @@
             yFormat: fmt1,
             title: '💥 RB Receptions: YAC Machines or Dump-offs?',
             insight: 'High RB targets + high YAC% = dynamic weapons. High RB + low YAC% = desperation checkdowns at LOS.',
+            metricHelp: '<strong>YAC %:</strong> Prozentsatz der Yards nach dem Catch (YAC). Hohe RB-Pässe + hoher YAC% = dynamische Waffe. Hohe RB-Pässe + niedriger YAC% = Checkdown an der Line.',
             extraInfo: d => `RB1: ${d.rb1_name} - ${fmt1(d.rec_yac_pct)}% YAC`,
             metricHelp: '<strong>YAC %:</strong> Prozentsatz der Yards nach dem Fang. Viele RB-Pässe + hohes YAC% = dynamische Waffe. Viel RB + niedriges YAC% = Abwurf an der Linie.',
             quadrantHelp: {
