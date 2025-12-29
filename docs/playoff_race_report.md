@@ -13,14 +13,14 @@
 - **Seed 4:** Jaguars (10-5) - South | Playoffs: 99.5% | SOS: 0.573
 
 **Wild Card Rennen:**
-- **Seed 5:** Broncos (10-5) | Playoffs: 80.8% | SOS: 0.577
+- **Seed 5:** Broncos (10-5) | Playoffs: 77.8% | SOS: 0.577
 - **Seed 6:** Chargers (10-5) | Playoffs: 62.8% | SOS: 0.653
-- **Seed 7:** Bengals (10-5) | Playoffs: 87.1% | SOS: 0.661
-- **Seed 8:** Colts (9-6) | Playoffs: 46.9% | SOS: 0.272
-- **Seed 9:** Steelers (9-6) | Playoffs: 26.3% | SOS: 0.606
+- **Seed 7:** Bengals (10-5) | Playoffs: 86.8% | SOS: 0.661
+- **Seed 8:** Colts (9-6) | Playoffs: 49.1% | SOS: 0.272
+- **Seed 9:** Steelers (9-6) | Playoffs: 26.5% | SOS: 0.606
 
 **Auf der Kippe:**
-- **10.** Patriots (8-7) | Playoffs: 4.1% | SOS: 0.570
+- **10.** Patriots (8-7) | Playoffs: 3.9% | SOS: 0.570
 - **11.** Jets (7-8) | Playoffs: 0.0% | SOS: 0.417
 - **12.** Raiders (7-8) | Playoffs: 0.0% | SOS: 0.653
 
@@ -33,16 +33,16 @@
 - **Seed 4:** Rams (5-10) - West | Playoffs: 99.5% | SOS: 0.487
 
 **Wild Card Rennen:**
-- **Seed 5:** Commanders (9-5) | Playoffs: 92.2% | SOS: 0.395
-- **Seed 6:** Huskies (9-6) | Playoffs: 69.0% | SOS: 0.336
-- **Seed 7:** Giants (9-6) | Playoffs: 37.7% | SOS: 0.434
-- **Seed 8:** Buccaneers (9-6) | Playoffs: 43.5% | SOS: 0.606
-- **Seed 9:** Packers (9-6) | Playoffs: 58.5% | SOS: 0.609
+- **Seed 5:** Commanders (9-5) | Playoffs: 92.6% | SOS: 0.395
+- **Seed 6:** Huskies (9-6) | Playoffs: 68.7% | SOS: 0.336
+- **Seed 7:** Giants (9-6) | Playoffs: 39.4% | SOS: 0.434
+- **Seed 8:** Buccaneers (9-6) | Playoffs: 44.8% | SOS: 0.606
+- **Seed 9:** Packers (9-6) | Playoffs: 56.9% | SOS: 0.609
 
 **Auf der Kippe:**
 - **10.** Bears (6-9) | Playoffs: 0.0% | SOS: 0.491
 - **11.** Panthers (6-9) | Playoffs: 0.0% | SOS: 0.508
-- **12.** Seahawks (4-11) | Playoffs: 28.0% | SOS: 0.417
+- **12.** Seahawks (4-11) | Playoffs: 25.4% | SOS: 0.417
 
 ---
 
@@ -59,8 +59,8 @@
 
 Drei Teams bei 8-5, eines bei 7-6. Jeder kann diese Division gewinnen:
 
-- **Saints** (10-5): Playoffs 99.0% | SOS 0.347
-- **Buccaneers** (9-6): Playoffs 43.5% | SOS 0.606
+- **Saints** (10-5): Playoffs 99.6% | SOS 0.347
+- **Buccaneers** (9-6): Playoffs 44.8% | SOS 0.606
 - **Panthers** (6-9): Playoffs 0.0% | SOS 0.508
 - **Falcons** (3-12): Playoffs 0.0% | SOS 0.295
 
