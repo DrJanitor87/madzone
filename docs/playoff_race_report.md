@@ -7,42 +7,42 @@
 ### AFC Playoff Tabelle
 
 **Divisionsieger:**
-- **Seed 1:** Dolphins (12-3) - East | Playoffs: 99.5% | SOS: 0.530
-- **Seed 2:** Chiefs (12-3) - West | Playoffs: 99.5% | SOS: 0.577
-- **Seed 3:** Browns (11-4) - North | Playoffs: 99.5% | SOS: 0.439
-- **Seed 4:** Jaguars (10-5) - South | Playoffs: 99.5% | SOS: 0.573
+- **Seed 1:** Dolphins (13-3) - East | Playoffs: 99.5% | SOS: 0.762
+- **Seed 2:** Chiefs (13-3) - West | Playoffs: 99.5% | SOS: 0.456
+- **Seed 3:** Bengals (11-5) - North | Playoffs: 99.5% | SOS: 0.709
+- **Seed 4:** Jaguars (11-5) - South | Playoffs: 99.5% | SOS: 0.344
 
 **Wild Card Rennen:**
-- **Seed 5:** Broncos (10-5) | Playoffs: 77.8% | SOS: 0.577
-- **Seed 6:** Chargers (10-5) | Playoffs: 62.8% | SOS: 0.653
-- **Seed 7:** Bengals (10-5) | Playoffs: 86.8% | SOS: 0.661
-- **Seed 8:** Colts (9-6) | Playoffs: 49.1% | SOS: 0.272
-- **Seed 9:** Steelers (9-6) | Playoffs: 26.5% | SOS: 0.606
+- **Seed 5:** Browns (11-5) | Playoffs: 100.0% | SOS: 0.150
+- **Seed 6:** Broncos (11-5) | Playoffs: 100.0% | SOS: 0.603
+- **Seed 7:** Colts (10-6) | Playoffs: 51.1% | SOS: 0.219
+- **Seed 8:** Chargers (10-6) | Playoffs: 48.1% | SOS: 0.578
+- **Seed 9:** Steelers (9-7) | Playoffs: 0.0% | SOS: 0.641
 
 **Auf der Kippe:**
-- **10.** Patriots (8-7) | Playoffs: 3.9% | SOS: 0.570
-- **11.** Jets (7-8) | Playoffs: 0.0% | SOS: 0.417
-- **12.** Raiders (7-8) | Playoffs: 0.0% | SOS: 0.653
+- **10.** Jets (8-8) | Playoffs: 0.0% | SOS: 0.256
+- **11.** Patriots (8-8) | Playoffs: 0.0% | SOS: 0.628
+- **12.** Raiders (7-9) | Playoffs: 0.0% | SOS: 0.772
 
 ### NFC Playoff Tabelle
 
 **Divisionsieger:**
-- **Seed 1:** Vikings (15-0) - North | Playoffs: 99.5% | SOS: 0.639
-- **Seed 2:** Eagles (11-4) - East | Playoffs: 99.5% | SOS: 0.480
-- **Seed 3:** Saints (10-5) - South | Playoffs: 99.5% | SOS: 0.347
-- **Seed 4:** Rams (5-10) - West | Playoffs: 99.5% | SOS: 0.487
+- **Seed 1:** Vikings (15-1) - North | Playoffs: 99.5% | SOS: 0.919
+- **Seed 2:** Eagles (12-4) - East | Playoffs: 99.5% | SOS: 0.487
+- **Seed 3:** Saints (11-5) - South | Playoffs: 99.5% | SOS: 0.528
+- **Seed 4:** Rams (6-10) - West | Playoffs: 99.5% | SOS: 0.738
 
 **Wild Card Rennen:**
-- **Seed 5:** Commanders (9-5) | Playoffs: 92.6% | SOS: 0.395
-- **Seed 6:** Huskies (9-6) | Playoffs: 68.7% | SOS: 0.336
-- **Seed 7:** Giants (9-6) | Playoffs: 39.4% | SOS: 0.434
-- **Seed 8:** Buccaneers (9-6) | Playoffs: 44.8% | SOS: 0.606
-- **Seed 9:** Packers (9-6) | Playoffs: 56.9% | SOS: 0.609
+- **Seed 5:** Commanders (10-5) | Playoffs: 100.0% | SOS: 0.438
+- **Seed 6:** Huskies (10-6) | Playoffs: 100.0% | SOS: 0.425
+- **Seed 7:** Packers (10-6) | Playoffs: 100.0% | SOS: 0.553
+- **Seed 8:** Buccaneers (9-7) | Playoffs: 0.0% | SOS: 0.606
+- **Seed 9:** Giants (9-7) | Playoffs: 0.0% | SOS: 0.688
 
 **Auf der Kippe:**
-- **10.** Bears (6-9) | Playoffs: 0.0% | SOS: 0.491
-- **11.** Panthers (6-9) | Playoffs: 0.0% | SOS: 0.508
-- **12.** Seahawks (4-11) | Playoffs: 25.4% | SOS: 0.417
+- **10.** Bears (7-9) | Playoffs: 0.0% | SOS: 0.253
+- **11.** Panthers (6-10) | Playoffs: 0.0% | SOS: 0.263
+- **12.** Seahawks (4-12) | Playoffs: 0.0% | SOS: 0.281
 
 ---
 
@@ -59,10 +59,10 @@
 
 Drei Teams bei 8-5, eines bei 7-6. Jeder kann diese Division gewinnen:
 
-- **Saints** (10-5): Playoffs 99.6% | SOS 0.347
-- **Buccaneers** (9-6): Playoffs 44.8% | SOS 0.606
-- **Panthers** (6-9): Playoffs 0.0% | SOS 0.508
-- **Falcons** (3-12): Playoffs 0.0% | SOS 0.295
+- **Saints** (11-5): Playoffs 100.0% | SOS 0.528
+- **Buccaneers** (9-7): Playoffs 0.0% | SOS 0.606
+- **Panthers** (6-10): Playoffs 0.0% | SOS 0.263
+- **Falcons** (3-13): Playoffs 0.0% | SOS 0.353
 
 **Analyse:** Falcons (0.433) vs Saints (0.612) – ein massiver SOS-Unterschied von 0.179 könnte die Division drehen!
 
