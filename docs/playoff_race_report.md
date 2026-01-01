@@ -15,8 +15,8 @@
 **Wild Card Rennen:**
 - **Seed 5:** Browns (11-5) | Playoffs: 100.0% | SOS: 0.150
 - **Seed 6:** Broncos (11-5) | Playoffs: 100.0% | SOS: 0.603
-- **Seed 7:** Colts (10-6) | Playoffs: 51.1% | SOS: 0.219
-- **Seed 8:** Chargers (10-6) | Playoffs: 48.1% | SOS: 0.578
+- **Seed 7:** Colts (10-6) | Playoffs: 50.9% | SOS: 0.219
+- **Seed 8:** Chargers (10-6) | Playoffs: 48.4% | SOS: 0.578
 - **Seed 9:** Steelers (9-7) | Playoffs: 0.0% | SOS: 0.641
 
 **Auf der Kippe:**
