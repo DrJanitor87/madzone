@@ -1,0 +1,902 @@
+{
+  "generated_at": "2026-01-19T20:20:34.549345Z",
+  "num_simulations": 10000,
+  "teams": {
+    "49ers": {
+      "conference": "NFC",
+      "division": "NFC West",
+      "current_record": "3-14-0",
+      "win_pct": 0.176,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "3-14-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "3-14-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Bears": {
+      "conference": "NFC",
+      "division": "NFC North",
+      "current_record": "8-9-0",
+      "win_pct": 0.471,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "8-9-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "8-9-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Bengals": {
+      "conference": "AFC",
+      "division": "AFC North",
+      "current_record": "11-7-0",
+      "win_pct": 0.611,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "11-7-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "11-7-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Bills": {
+      "conference": "AFC",
+      "division": "AFC East",
+      "current_record": "5-11-1",
+      "win_pct": 0.324,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "5-11-1",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "5-11-1",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Broncos": {
+      "conference": "AFC",
+      "division": "AFC West",
+      "current_record": "13-6-0",
+      "win_pct": 0.684,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "13-6-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "13-6-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Browns": {
+      "conference": "AFC",
+      "division": "AFC North",
+      "current_record": "12-6-0",
+      "win_pct": 0.667,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 100.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "12-6-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 100.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "12-6-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Buccaneers": {
+      "conference": "NFC",
+      "division": "NFC South",
+      "current_record": "9-8-0",
+      "win_pct": 0.529,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "9-8-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "9-8-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Cardinals": {
+      "conference": "NFC",
+      "division": "NFC West",
+      "current_record": "4-13-0",
+      "win_pct": 0.235,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "4-13-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "4-13-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Chargers": {
+      "conference": "AFC",
+      "division": "AFC West",
+      "current_record": "10-7-0",
+      "win_pct": 0.588,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "10-7-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "10-7-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Chiefs": {
+      "conference": "AFC",
+      "division": "AFC West",
+      "current_record": "14-4-0",
+      "win_pct": 0.778,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 100.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "14-4-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 100.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "14-4-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Colts": {
+      "conference": "AFC",
+      "division": "AFC South",
+      "current_record": "11-8-0",
+      "win_pct": 0.579,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "11-8-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "11-8-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Commanders": {
+      "conference": "NFC",
+      "division": "NFC East",
+      "current_record": "14-6-1",
+      "win_pct": 0.69,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 100.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "14-6-1",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 100.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "14-6-1",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Dolphins": {
+      "conference": "AFC",
+      "division": "AFC East",
+      "current_record": "15-4-0",
+      "win_pct": 0.789,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 100.0,
+        "bye": 100.0
+      },
+      "record_outcomes": [
+        {
+          "record": "15-4-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 100.0,
+          "bye_pct": 100.0
+        }
+      ],
+      "most_likely": {
+        "record": "15-4-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Eagles": {
+      "conference": "NFC",
+      "division": "NFC East",
+      "current_record": "13-6-0",
+      "win_pct": 0.684,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "13-6-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "13-6-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Falcons": {
+      "conference": "NFC",
+      "division": "NFC South",
+      "current_record": "3-14-0",
+      "win_pct": 0.176,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "3-14-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "3-14-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Giants": {
+      "conference": "NFC",
+      "division": "NFC East",
+      "current_record": "10-8-0",
+      "win_pct": 0.556,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "10-8-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "10-8-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Huskies": {
+      "conference": "NFC",
+      "division": "NFC East",
+      "current_record": "12-7-0",
+      "win_pct": 0.632,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "12-7-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "12-7-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Jaguars": {
+      "conference": "AFC",
+      "division": "AFC South",
+      "current_record": "16-5-0",
+      "win_pct": 0.762,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 100.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "16-5-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 100.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "16-5-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Jets": {
+      "conference": "AFC",
+      "division": "AFC East",
+      "current_record": "8-9-0",
+      "win_pct": 0.471,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "8-9-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "8-9-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Lions": {
+      "conference": "NFC",
+      "division": "NFC North",
+      "current_record": "3-13-1",
+      "win_pct": 0.206,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "3-13-1",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "3-13-1",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Packers": {
+      "conference": "NFC",
+      "division": "NFC North",
+      "current_record": "10-7-0",
+      "win_pct": 0.588,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "10-7-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "10-7-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Panthers": {
+      "conference": "NFC",
+      "division": "NFC South",
+      "current_record": "7-10-0",
+      "win_pct": 0.412,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "7-10-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "7-10-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Patriots": {
+      "conference": "AFC",
+      "division": "AFC East",
+      "current_record": "9-8-0",
+      "win_pct": 0.529,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "9-8-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "9-8-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Raiders": {
+      "conference": "AFC",
+      "division": "AFC West",
+      "current_record": "7-10-0",
+      "win_pct": 0.412,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "7-10-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "7-10-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Rams": {
+      "conference": "NFC",
+      "division": "NFC West",
+      "current_record": "6-12-0",
+      "win_pct": 0.333,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 100.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "6-12-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 100.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "6-12-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Ravens": {
+      "conference": "AFC",
+      "division": "AFC North",
+      "current_record": "1-16-0",
+      "win_pct": 0.059,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "1-16-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "1-16-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Saints": {
+      "conference": "NFC",
+      "division": "NFC South",
+      "current_record": "12-6-0",
+      "win_pct": 0.667,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 100.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "12-6-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 100.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "12-6-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Seahawks": {
+      "conference": "NFC",
+      "division": "NFC West",
+      "current_record": "4-13-0",
+      "win_pct": 0.235,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "4-13-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "4-13-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Steelers": {
+      "conference": "AFC",
+      "division": "AFC North",
+      "current_record": "10-7-0",
+      "win_pct": 0.588,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "10-7-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "10-7-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Texans": {
+      "conference": "AFC",
+      "division": "AFC South",
+      "current_record": "3-14-0",
+      "win_pct": 0.176,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "3-14-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "3-14-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Titans": {
+      "conference": "AFC",
+      "division": "AFC South",
+      "current_record": "4-12-1",
+      "win_pct": 0.265,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 0.0,
+        "division": 0.0,
+        "bye": 0.0
+      },
+      "record_outcomes": [
+        {
+          "record": "4-12-1",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 0.0,
+          "division_pct": 0.0,
+          "bye_pct": 0.0
+        }
+      ],
+      "most_likely": {
+        "record": "4-12-1",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    },
+    "Vikings": {
+      "conference": "NFC",
+      "division": "NFC North",
+      "current_record": "16-3-0",
+      "win_pct": 0.842,
+      "remaining_games": [],
+      "game_count": 0,
+      "overall_probabilities": {
+        "playoff": 100.0,
+        "division": 100.0,
+        "bye": 100.0
+      },
+      "record_outcomes": [
+        {
+          "record": "16-3-0",
+          "frequency": 10000,
+          "percentage": 100.0,
+          "playoff_pct": 100.0,
+          "division_pct": 100.0,
+          "bye_pct": 100.0
+        }
+      ],
+      "most_likely": {
+        "record": "16-3-0",
+        "frequency": 10000,
+        "percentage": 100.0
+      }
+    }
+  }
+}
