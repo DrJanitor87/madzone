@@ -4,28 +4,28 @@
 
 ### Top 3 Picks - QB Territory
 
-- **Pick 1:** Ravens (AFC) - 1-16 | Remaining SOS: 0.000 🟢 Easy (might win games!)
-- **Pick 2:** Texans (AFC) - 3-14 | Remaining SOS: 0.000 🟢 Easy (might win games!)
-- **Pick 3:** 49ers (NFC) - 3-14 | Remaining SOS: 0.000 🟢 Easy (might win games!)
+- **Pick 1:** Rams (NFC) - 2-13 | Remaining SOS: 0.377 🟢 Easy (might win games!)
+- **Pick 2:** 49ers (NFC) - 2-12 | Remaining SOS: 0.338 🟢 Easy (might win games!)
+- **Pick 3:** Patriots (AFC) - 3-12 | Remaining SOS: 0.580 🔴 Brutal (tank secure)
 
 ### Top 10 Picks - Premium Talent
 
-- **Pick 4:** Falcons (NFC) - 3-14 | Remaining SOS: 0.000 🟢 Easy (risk of winning)
-- **Pick 5:** Lions (NFC) - 3-13 | Remaining SOS: 0.000 🟢 Easy (risk of winning)
-- **Pick 6:** Cardinals (NFC) - 4-13 | Remaining SOS: 0.000 🟢 Easy (risk of winning)
-- **Pick 7:** Seahawks (NFC) - 4-13 | Remaining SOS: 0.000 🟢 Easy (risk of winning)
-- **Pick 8:** Titans (AFC) - 4-12 | Remaining SOS: 0.000 🟢 Easy (risk of winning)
-- **Pick 9:** Bills (AFC) - 5-11 | Remaining SOS: 0.000 🟢 Easy (risk of winning)
-- **Pick 10:** Rams (NFC) - 6-12 | Remaining SOS: 0.000 🟢 Easy (risk of winning)
+- **Pick 4:** Ravens (AFC) - 3-11 | Remaining SOS: 0.676 🔴 Brutal (stay bottom)
+- **Pick 5:** Huskies (NFC) - 3-11 | Remaining SOS: 0.456 🟡 Balanced
+- **Pick 6:** Lions (NFC) - 4-11 | Remaining SOS: 0.511 🟡 Balanced
+- **Pick 7:** Chiefs (AFC) - 4-11 | Remaining SOS: 0.336 🟢 Easy (risk of winning)
+- **Pick 8:** Steelers (AFC) - 4-10 | Remaining SOS: 0.490 🟡 Balanced
+- **Pick 9:** Giants (NFC) - 4-10 | Remaining SOS: 0.420 🟢 Easy (risk of winning)
+- **Pick 10:** Falcons (NFC) - 4-10 | Remaining SOS: 0.416 🟢 Easy (risk of winning)
 
 ### Picks 11-16 - Still Solid Value
 
-- **Pick 11:** Raiders (AFC) - 7-10 | Remaining SOS: 0.000 🟢 Easy
-- **Pick 12:** Panthers (NFC) - 7-10 | Remaining SOS: 0.000 🟢 Easy
-- **Pick 13:** Jets (AFC) - 8-9 | Remaining SOS: 0.000 🟢 Easy
-- **Pick 14:** Bears (NFC) - 8-9 | Remaining SOS: 0.000 🟢 Easy
-- **Pick 15:** Patriots (AFC) - 9-8 | Remaining SOS: 0.000 🟢 Easy
-- **Pick 16:** Buccaneers (NFC) - 9-8 | Remaining SOS: 0.000 🟢 Easy
+- **Pick 11:** Cardinals (NFC) - 6-8 | Remaining SOS: 0.413 🟢 Easy
+- **Pick 12:** Panthers (NFC) - 6-7 | Remaining SOS: 0.570 🔴 Brutal
+- **Pick 13:** Titans (AFC) - 7-8 | Remaining SOS: 0.611 🔴 Brutal
+- **Pick 14:** Raiders (AFC) - 7-7 | Remaining SOS: 0.589 🔴 Brutal
+- **Pick 15:** Bills (AFC) - 8-7 | Remaining SOS: 0.556 🔴 Brutal
+- **Pick 16:** Texans (AFC) - 8-6 | Remaining SOS: 0.597 🔴 Brutal
 
 ---
 
@@ -35,22 +35,27 @@
 
 **3 teams fighting for the top spot:**
 
-- **Ravens** (1-16): Projected final record ~1.0-16.0
-- **Texans** (3-14): Projected final record ~3.0-14.0
-- **49ers** (3-14): Projected final record ~3.0-14.0
+- **Rams** (2-13): Projected final record ~3.2-13.8
+- **49ers** (2-12): Projected final record ~4.0-13.0
+- **Patriots** (3-12): Projected final record ~3.8-13.2
 
 ### SOS Impact on Draft Position
 
 **Teams with EASY remaining schedule (danger of winning):**
 
-- **Ravens**: SOS 0.000 - Currently 1-16 → Risk of sliding down draft board!
-- **Texans**: SOS 0.000 - Currently 3-14 → Risk of sliding down draft board!
-- **49ers**: SOS 0.000 - Currently 3-14 → Risk of sliding down draft board!
-- **Falcons**: SOS 0.000 - Currently 3-14 → Risk of sliding down draft board!
-- **Lions**: SOS 0.000 - Currently 3-13 → Risk of sliding down draft board!
+- **Chiefs**: SOS 0.336 - Currently 4-11 → Risk of sliding down draft board!
+- **49ers**: SOS 0.338 - Currently 2-12 → Risk of sliding down draft board!
+- **Rams**: SOS 0.377 - Currently 2-13 → Risk of sliding down draft board!
+- **Cardinals**: SOS 0.413 - Currently 6-8 → Risk of sliding down draft board!
+- **Falcons**: SOS 0.416 - Currently 4-10 → Risk of sliding down draft board!
 
 **Teams with BRUTAL remaining schedule (tank secure):**
 
+- **Ravens**: SOS 0.676 - Currently 3-11 → Draft position locked in!
+- **Titans**: SOS 0.611 - Currently 7-8 → Draft position locked in!
+- **Texans**: SOS 0.597 - Currently 8-6 → Draft position locked in!
+- **Raiders**: SOS 0.589 - Currently 7-7 → Draft position locked in!
+- **Patriots**: SOS 0.580 - Currently 3-12 → Draft position locked in!
 
 ---
 
